@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {people as People} from './people';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
+import {people, Person} from './people';
 
 /**
  * @title Basic use of `<table mat-table>`
@@ -9,13 +10,14 @@ import {people as People} from './people';
   styleUrls: ['table-basic-example.css'],
   templateUrl: 'table-basic-example.html',
 })
-export class TableBasicExample {
-  displayedColumns: string[] = ['index', 'picture', 'firstname', 'age', 'email'];
-  dataSource = People;
+export class TableBasicExample implements OnInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  displayedColumns: string[] = ['index', 'firstname', 'lastname', 'age', 'email'];
+  dataSource = new MatTableDataSource<Person>(people);
 
-  colors = ['6907e8', 'ff00ff', '00ff00', 'ff0000', '0000ff'];
-  len = this.colors.length;
-
+  ngOnInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 }
 
 

@@ -26,7 +26,7 @@ import { PaginatorI18n} from './app/paginator-i18n.service';
   ],
   entryComponents: [TableBasicExample, TablePaginatorExampleComponent],
   declarations: [TableBasicExample, TablePaginatorExampleComponent],
-  bootstrap: [TablePaginatorExampleComponent],
+  bootstrap: [TableBasicExample],
   providers: [
     {
       provide: MatPaginatorIntl,

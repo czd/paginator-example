@@ -27,11 +27,8 @@ export class TablePaginatorExampleComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild('textCtrl') textCtrl: ElementRef;
 
-  displayedColumns: string[] = ['index', 'picture', 'firstname', 'age', 'email'];
+  displayedColumns: string[] = ['index', 'firstname', 'lastname', 'age', 'email'];
   dataSource = new MatTableDataSource<Person>(People);
-
-  colors = ['6907e8', 'ff00ff', '00ff00', 'ff0000', '0000ff'];
-  len = this.colors.length;
 
   // MatPaginator Inputs
   length = 100;
